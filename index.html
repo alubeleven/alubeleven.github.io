@@ -1,0 +1,1538 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>taipei_nana 今日吃瓜 | 城市影像社区_官方视频门户</title>
+<meta name="description" content="taipei_nana 今日吃瓜官方网站，一个记录台北街头美食、在地生活与创作者故事的原创视频社区，用高清影像陪伴每一次城市探索。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b2430'/%3E%3Ccircle cx='32' cy='32' r='16' fill='%23ffb648'/%3E%3Cpath d='M27 24l14 8-14 8z' fill='%231b2430'/%3E%3C/svg%3E">
+<style>
+:root{
+  --tn-ink:#1b2430;
+  --tn-ink-soft:#38424f;
+  --tn-amber:#ffb648;
+  --tn-amber-deep:#e08a17;
+  --tn-cream:#fbf6ec;
+  --tn-cream-2:#f4ecdc;
+  --tn-line:#e2d6c0;
+  --tn-green:#3c7a5b;
+  --tn-red:#d9534f;
+  --tn-radius:18px;
+  --tn-shadow:0 10px 30px rgba(27,36,48,.08);
+  --tn-shadow-lg:0 18px 48px rgba(27,36,48,.16);
+  --tn-max:1180px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+  color:var(--tn-ink);
+  background:var(--tn-cream);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{margin:0 0 .5em;line-height:1.3;font-weight:800;letter-spacing:.01em;}
+p{margin:0 0 1em;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+ul,ol{margin:0 0 1em;padding-left:1.2em;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+.tn-wrap{max-width:var(--tn-max);margin:0 auto;padding:0 22px;}
+.tn-skip{position:absolute;left:-9999px;top:0;background:var(--tn-ink);color:#fff;padding:10px 18px;z-index:999;border-radius:0 0 10px 0;}
+.tn-skip:focus{left:0;}
+
+/* ---------- 吸顶公告 + 页头 ---------- */
+.tn-sticky-shell{position:sticky;top:0;z-index:80;}
+.tn-notice{
+  background:linear-gradient(90deg,var(--tn-ink) 0%,#25303d 60%,#2e3b4a 100%);
+  color:#f7efe0;
+  font-size:13.5px;
+}
+.tn-notice-inner{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  max-width:var(--tn-max);margin:0 auto;padding:9px 22px;
+}
+.tn-notice-tag{
+  flex:none;background:var(--tn-amber);color:var(--tn-ink);
+  font-weight:800;font-size:12px;padding:2px 10px;border-radius:999px;letter-spacing:.05em;
+}
+.tn-notice-list{display:flex;gap:20px;flex-wrap:wrap;overflow:hidden;}
+.tn-notice-item{white-space:nowrap;opacity:.92;}
+.tn-notice-item b{color:var(--tn-amber);font-weight:700;}
+.tn-notice-time{opacity:.6;margin-left:6px;font-size:12px;}
+.tn-header{
+  background:rgba(251,246,236,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--tn-line);
+}
+.tn-header-inner{
+  max-width:var(--tn-max);margin:0 auto;padding:12px 22px;
+  display:flex;align-items:center;gap:18px;
+}
+.tn-brand{display:flex;align-items:center;gap:10px;flex:none;}
+.tn-brand-mark{
+  width:40px;height:40px;border-radius:12px;background:var(--tn-ink);
+  display:grid;place-items:center;flex:none;
+}
+.tn-brand-mark svg{width:22px;height:22px;}
+.tn-brand-text{display:flex;flex-direction:column;line-height:1.15;}
+.tn-brand-name{font-weight:900;font-size:17px;letter-spacing:.02em;}
+.tn-brand-sub{font-size:11px;color:var(--tn-ink-soft);letter-spacing:.14em;}
+.tn-nav{display:flex;gap:4px;margin-left:8px;flex-wrap:wrap;}
+.tn-nav a{
+  padding:7px 12px;border-radius:999px;font-size:14.5px;font-weight:600;color:var(--tn-ink-soft);
+  transition:.2s;
+}
+.tn-nav a:hover{background:var(--tn-cream-2);color:var(--tn-ink);}
+.tn-head-tools{display:flex;align-items:center;gap:10px;margin-left:auto;}
+.tn-search{
+  display:flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--tn-line);
+  border-radius:999px;padding:5px 6px 5px 14px;min-width:210px;
+}
+.tn-search input{
+  border:none;outline:none;background:none;font-size:14px;width:100%;color:var(--tn-ink);
+}
+.tn-search input::placeholder{color:#a89c86;}
+.tn-search-btn{
+  flex:none;width:30px;height:30px;border-radius:50%;background:var(--tn-amber);
+  display:grid;place-items:center;transition:.2s;
+}
+.tn-search-btn:hover{background:var(--tn-amber-deep);}
+.tn-search-btn svg{width:15px;height:15px;}
+.tn-search-hint{
+  display:none;max-width:var(--tn-max);margin:0 auto;padding:0 22px 10px;
+  font-size:13px;color:var(--tn-ink-soft);
+}
+.tn-search-hint.is-on{display:block;}
+.tn-search-hint em{color:var(--tn-amber-deep);font-style:normal;font-weight:700;}
+.tn-cta{
+  background:var(--tn-ink);color:#fff;font-weight:700;font-size:14px;
+  padding:9px 18px;border-radius:999px;transition:.2s;white-space:nowrap;
+}
+.tn-cta:hover{background:var(--tn-amber-deep);color:var(--tn-ink);}
+.tn-burger{display:none;width:42px;height:42px;border-radius:12px;border:1px solid var(--tn-line);background:#fff;place-items:center;}
+.tn-burger span{display:block;width:18px;height:2px;background:var(--tn-ink);margin:3px 0;border-radius:2px;transition:.25s;}
+.tn-burger.is-open span:nth-child(1){transform:translateY(5px) rotate(45deg);}
+.tn-burger.is-open span:nth-child(2){opacity:0;}
+.tn-burger.is-open span:nth-child(3){transform:translateY(-5px) rotate(-45deg);}
+
+/* ---------- 锚点偏移 ---------- */
+.tn-anchor{scroll-margin-top:118px;}
+section{scroll-margin-top:118px;}
+
+/* ---------- 通用 ---------- */
+.tn-sec{padding:64px 0;border-bottom:1px solid var(--tn-line);}
+.tn-sec:last-of-type{border-bottom:none;}
+.tn-kicker{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;
+  letter-spacing:.18em;color:var(--tn-amber-deep);text-transform:uppercase;margin-bottom:10px;
+}
+.tn-kicker::before{content:"";width:22px;height:2px;background:var(--tn-amber-deep);border-radius:2px;}
+.tn-h2{font-size:clamp(24px,3.2vw,34px);}
+.tn-lead{color:var(--tn-ink-soft);font-size:15.5px;max-width:760px;}
+.tn-tag{
+  display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;
+  background:var(--tn-cream-2);color:var(--tn-ink-soft);margin:0 6px 6px 0;
+}
+.tn-btn{
+  display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:999px;
+  font-weight:700;font-size:14.5px;transition:.2s;border:1.5px solid transparent;
+}
+.tn-btn-primary{background:var(--tn-amber);color:var(--tn-ink);}
+.tn-btn-primary:hover{background:var(--tn-amber-deep);transform:translateY(-2px);box-shadow:var(--tn-shadow);}
+.tn-btn-ghost{border-color:var(--tn-ink);color:var(--tn-ink);}
+.tn-btn-ghost:hover{background:var(--tn-ink);color:#fff;}
+.tn-btn-line{border-color:var(--tn-line);background:#fff;color:var(--tn-ink-soft);}
+.tn-btn-line:hover{border-color:var(--tn-ink);color:var(--tn-ink);}
+
+/* ---------- 首屏 5:5 ---------- */
+.tn-hero{padding:56px 0 72px;background:
+  radial-gradient(circle at 88% 12%,rgba(255,182,72,.28),transparent 46%),
+  radial-gradient(circle at 6% 88%,rgba(60,122,91,.12),transparent 42%);}
+.tn-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center;}
+.tn-hero-badge{
+  display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--tn-line);
+  border-radius:999px;padding:5px 14px 5px 8px;font-size:12.5px;font-weight:700;color:var(--tn-ink-soft);
+  margin-bottom:20px;box-shadow:var(--tn-shadow);
+}
+.tn-hero-badge i{width:8px;height:8px;border-radius:50%;background:var(--tn-green);display:inline-block;box-shadow:0 0 0 4px rgba(60,122,91,.16);}
+.tn-h1{font-size:clamp(38px,5.4vw,64px);line-height:1.06;letter-spacing:-.01em;margin-bottom:18px;}
+.tn-h1 .tn-h1-accent{
+  background:linear-gradient(180deg,transparent 62%,var(--tn-amber) 62%,var(--tn-amber) 92%,transparent 92%);
+  padding:0 4px;
+}
+.tn-hero-desc{font-size:16.5px;color:var(--tn-ink-soft);max-width:520px;}
+.tn-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 30px;}
+.tn-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:520px;}
+.tn-stat{background:#fff;border:1px solid var(--tn-line);border-radius:14px;padding:12px 14px;}
+.tn-stat b{display:block;font-size:24px;font-weight:900;letter-spacing:-.01em;}
+.tn-stat span{font-size:12px;color:var(--tn-ink-soft);}
+.tn-stat:nth-child(2) b{color:var(--tn-amber-deep);}
+.tn-stat:nth-child(3) b{color:var(--tn-green);}
+.tn-hero-visual{position:relative;}
+.tn-hero-visual figure{
+  margin:0;border-radius:26px;overflow:hidden;box-shadow:var(--tn-shadow-lg);
+  border:1px solid rgba(27,36,48,.08);background:#fff;
+}
+.tn-hero-visual img{width:100%;aspect-ratio:4/3.4;object-fit:cover;}
+.tn-hero-float{
+  position:absolute;left:-16px;bottom:26px;background:#fff;border-radius:16px;
+  padding:12px 16px;box-shadow:var(--tn-shadow-lg);border:1px solid var(--tn-line);
+  display:flex;align-items:center;gap:12px;max-width:270px;
+}
+.tn-hero-float .tn-play-mini{
+  width:40px;height:40px;border-radius:50%;background:var(--tn-amber);display:grid;place-items:center;flex:none;
+}
+.tn-hero-float .tn-play-mini svg{width:15px;height:15px;margin-left:2px;}
+.tn-hero-float b{display:block;font-size:13.5px;line-height:1.35;}
+.tn-hero-float span{font-size:11.5px;color:var(--tn-ink-soft);}
+.tn-hero-pill{
+  position:absolute;right:-10px;top:-14px;background:var(--tn-ink);color:#fff;border-radius:14px;
+  padding:8px 14px;font-size:12.5px;font-weight:700;box-shadow:var(--tn-shadow-lg);letter-spacing:.02em;
+}
+.tn-hero-pill em{color:var(--tn-amber);font-style:normal;}
+
+/* ---------- 简介 ---------- */
+.tn-about-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:44px;align-items:start;}
+.tn-about-card{
+  background:var(--tn-ink);color:#f4ecdc;border-radius:22px;padding:30px 28px;
+  box-shadow:var(--tn-shadow-lg);position:relative;overflow:hidden;
+}
+.tn-about-card::after{
+  content:"";position:absolute;width:180px;height:180px;border-radius:50%;
+  background:rgba(255,182,72,.16);right:-60px;bottom:-70px;
+}
+.tn-about-card h3{color:var(--tn-amber);font-size:19px;margin-bottom:12px;}
+.tn-about-card p{font-size:14.5px;color:#e3d9c6;position:relative;z-index:1;}
+.tn-about-card ul{position:relative;z-index:1;padding-left:1.1em;font-size:14px;color:#d9cebb;}
+.tn-about-card li{margin-bottom:6px;}
+.tn-about-text p{font-size:15.5px;color:var(--tn-ink-soft);}
+
+/* ---------- 焦点大图 + 列表 ---------- */
+.tn-focus-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:34px;align-items:start;}
+.tn-focus-main{
+  background:#fff;border:1px solid var(--tn-line);border-radius:22px;overflow:hidden;
+  box-shadow:var(--tn-shadow);transition:.25s;
+}
+.tn-focus-main:hover{transform:translateY(-4px);box-shadow:var(--tn-shadow-lg);}
+.tn-focus-main img{width:100%;aspect-ratio:16/10;object-fit:cover;}
+.tn-focus-body{padding:22px 24px 26px;}
+.tn-meta-row{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--tn-ink-soft);margin-bottom:8px;}
+.tn-focus-body h3{font-size:22px;}
+.tn-focus-body p{font-size:14.5px;color:var(--tn-ink-soft);}
+.tn-focus-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:14px;}
+.tn-like,.tn-fav{
+  display:inline-flex;align-items:center;gap:6px;border:1px solid var(--tn-line);background:#fff;
+  border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;color:var(--tn-ink-soft);transition:.2s;
+}
+.tn-like:hover,.tn-fav:hover{border-color:var(--tn-amber-deep);color:var(--tn-amber-deep);}
+.tn-like.is-active{background:var(--tn-amber);border-color:var(--tn-amber);color:var(--tn-ink);}
+.tn-fav.is-active{background:#fde7e6;border-color:var(--tn-red);color:var(--tn-red);}
+.tn-fav.is-active svg path{fill:currentColor;}
+.tn-focus-list{display:flex;flex-direction:column;gap:12px;}
+.tn-focus-item{
+  display:grid;grid-template-columns:52px minmax(0,1fr);gap:14px;align-items:start;
+  background:#fff;border:1px solid var(--tn-line);border-radius:16px;padding:14px 16px;transition:.2s;
+}
+.tn-focus-item:hover{border-color:var(--tn-amber);transform:translateX(4px);}
+.tn-focus-num{font-size:22px;font-weight:900;color:var(--tn-amber-deep);line-height:1;padding-top:4px;}
+.tn-focus-item h4{font-size:15.5px;margin-bottom:4px;}
+.tn-focus-item p{font-size:13px;color:var(--tn-ink-soft);margin:0 0 6px;}
+.tn-focus-item small{font-size:11.5px;color:#9a8e78;}
+
+/* ---------- 热门视频流 ---------- */
+.tn-video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;}
+.tn-video-card{
+  background:#fff;border:1px solid var(--tn-line);border-radius:18px;overflow:hidden;
+  display:flex;flex-direction:column;transition:.25s;
+}
+.tn-video-card:hover{transform:translateY(-5px);box-shadow:var(--tn-shadow-lg);border-color:var(--tn-amber);}
+.tn-video-thumb{position:relative;}
+.tn-video-thumb img{width:100%;aspect-ratio:16/9;object-fit:cover;}
+.tn-video-dur{
+  position:absolute;right:10px;bottom:10px;background:rgba(27,36,48,.85);color:#fff;
+  font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:6px;
+}
+.tn-video-cat{
+  position:absolute;left:10px;top:10px;background:var(--tn-amber);color:var(--tn-ink);
+  font-size:11.5px;font-weight:800;padding:3px 9px;border-radius:6px;
+}
+.tn-video-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1 1 auto;}
+.tn-video-body h3{font-size:16.5px;margin-bottom:6px;}
+.tn-video-body p{font-size:13.2px;color:var(--tn-ink-soft);flex:1 1 auto;margin-bottom:10px;}
+.tn-video-author{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--tn-ink-soft);margin-bottom:10px;}
+.tn-avatar-sm{
+  width:26px;height:26px;border-radius:50%;flex:none;display:grid;place-items:center;
+  font-size:11.5px;font-weight:800;color:#fff;
+}
+.tn-video-data{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:#8f846d;border-top:1px dashed var(--tn-line);padding-top:10px;}
+.tn-video-ops{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;}
+.tn-op{
+  font-size:12px;font-weight:700;padding:5px 11px;border-radius:999px;border:1px solid var(--tn-line);
+  background:#fff;color:var(--tn-ink-soft);transition:.2s;
+}
+.tn-op:hover{border-color:var(--tn-amber-deep);color:var(--tn-amber-deep);}
+.tn-op.is-active{background:var(--tn-amber);border-color:var(--tn-amber);color:var(--tn-ink);}
+.tn-op-fav.is-active{background:#fde7e6;border-color:var(--tn-red);color:var(--tn-red);}
+
+/* ---------- 专题 ---------- */
+.tn-topic-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,1fr);gap:22px;}
+.tn-topic-card{
+  border-radius:20px;padding:24px;background:#fff;border:1px solid var(--tn-line);
+  display:flex;flex-direction:column;transition:.25s;
+}
+.tn-topic-card:hover{transform:translateY(-4px);box-shadow:var(--tn-shadow-lg);}
+.tn-topic-card.tn-topic-feature{background:linear-gradient(160deg,#1b2430,#2d3a4a);color:#f4ecdc;border-color:#2d3a4a;}
+.tn-topic-card.tn-topic-feature h3{color:var(--tn-amber);}
+.tn-topic-card.tn-topic-feature p{color:#d8cdb9;}
+.tn-topic-state{
+  align-self:flex-start;font-size:11.5px;font-weight:800;padding:3px 10px;border-radius:999px;
+  background:rgba(255,182,72,.18);color:var(--tn-amber-deep);margin-bottom:12px;
+}
+.tn-topic-feature .tn-topic-state{background:rgba(255,182,72,.22);color:var(--tn-amber);}
+.tn-topic-card h3{font-size:18px;margin-bottom:8px;}
+.tn-topic-card p{font-size:13.5px;flex:1 1 auto;margin-bottom:12px;}
+.tn-topic-list{list-style:none;padding:0;margin:0;font-size:13px;display:flex;flex-direction:column;gap:7px;}
+.tn-topic-list li{padding-left:16px;position:relative;color:inherit;opacity:.92;}
+.tn-topic-list li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--tn-amber);}
+.tn-topic-feature .tn-topic-list li::before{background:var(--tn-amber);}
+.tn-topic-list li span{color:#9a8e78;font-size:11.5px;}
+.tn-topic-feature .tn-topic-list li span{color:#a99d88;}
+
+/* ---------- 关键词解析 ---------- */
+.tn-essay{background:#fff;border:1px solid var(--tn-line);border-radius:24px;padding:36px clamp(20px,4vw,48px);box-shadow:var(--tn-shadow);}
+.tn-essay h2{font-size:clamp(22px,2.8vw,30px);}
+.tn-essay h3{font-size:18px;margin-top:28px;color:var(--tn-ink);display:flex;align-items:center;gap:10px;}
+.tn-essay h3::before{content:"";width:6px;height:18px;border-radius:3px;background:var(--tn-amber);flex:none;}
+.tn-essay p{font-size:15.3px;color:var(--tn-ink-soft);text-align:justify;}
+.tn-essay strong{color:var(--tn-ink);}
+.tn-essay-note{
+  margin-top:26px;background:var(--tn-cream-2);border-left:4px solid var(--tn-amber-deep);
+  border-radius:0 14px 14px 0;padding:14px 18px;font-size:14px;color:var(--tn-ink-soft);
+}
+
+/* ---------- 作者矩阵（双列简介） ---------- */
+.tn-author-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;}
+.tn-author-card{
+  background:#fff;border:1px solid var(--tn-line);border-radius:20px;padding:22px 24px;
+  display:grid;grid-template-columns:64px minmax(0,1fr);gap:18px;transition:.25s;align-items:start;
+}
+.tn-author-card:hover{border-color:var(--tn-amber);box-shadow:var(--tn-shadow);transform:translateY(-3px);}
+.tn-avatar-lg{
+  width:64px;height:64px;border-radius:20px;display:grid;place-items:center;
+  font-size:22px;font-weight:900;color:#fff;flex:none;
+}
+.tn-author-card h3{font-size:16.5px;margin-bottom:2px;}
+.tn-author-field{font-size:12.5px;color:var(--tn-amber-deep);font-weight:700;margin-bottom:8px;}
+.tn-author-card p{font-size:13.2px;color:var(--tn-ink-soft);margin-bottom:10px;}
+.tn-author-stats{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:#8f846d;margin-bottom:10px;}
+.tn-author-ops{display:flex;gap:8px;flex-wrap:wrap;}
+
+/* ---------- 评论（双列短评） ---------- */
+.tn-comment-wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}
+.tn-comment{
+  background:#fff;border:1px solid var(--tn-line);border-radius:16px;padding:18px 20px;
+  display:flex;gap:14px;transition:.2s;
+}
+.tn-comment:hover{border-color:var(--tn-amber);}
+.tn-comment-body{min-width:0;}
+.tn-comment-head{display:flex;justify-content:space-between;gap:10px;align-items:baseline;margin-bottom:6px;flex-wrap:wrap;}
+.tn-comment-head b{font-size:14px;}
+.tn-comment-head span{font-size:11.5px;color:#9a8e78;}
+.tn-comment p{font-size:13.5px;color:var(--tn-ink-soft);margin:0;}
+.tn-stars{color:var(--tn-amber-deep);font-size:12.5px;letter-spacing:1px;margin-top:6px;display:block;}
+
+/* ---------- 榜单 ---------- */
+.tn-rank-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;}
+.tn-rank-col{background:#fff;border:1px solid var(--tn-line);border-radius:18px;padding:20px 22px;}
+.tn-rank-col h3{font-size:15.5px;display:flex;align-items:center;gap:8px;margin-bottom:14px;}
+.tn-rank-col h3 span{
+  width:22px;height:22px;border-radius:7px;background:var(--tn-amber);color:var(--tn-ink);
+  font-size:12px;display:grid;place-items:center;font-weight:900;flex:none;
+}
+.tn-rank-col ol{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px;counter-reset:rk;}
+.tn-rank-col li{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:10px;align-items:center;font-size:13.5px;counter-increment:rk;}
+.tn-rank-col li::before{content:counter(rk);font-weight:900;color:var(--tn-line-strong,#c9bba1);font-size:13px;}
+.tn-rank-col li b{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.tn-rank-col li em{font-style:normal;font-size:11.5px;color:#9a8e78;}
+
+/* ---------- 动态 + 合作 + FAQ ---------- */
+.tn-aux-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:28px;align-items:start;}
+.tn-timeline{list-style:none;padding:0;margin:0;position:relative;}
+.tn-timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--tn-line);}
+.tn-timeline li{position:relative;padding:0 0 20px 30px;}
+.tn-timeline li::before{
+  content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;
+  background:#fff;border:3px solid var(--tn-amber);box-sizing:border-box;
+}
+.tn-timeline time{display:block;font-size:12px;color:var(--tn-amber-deep);font-weight:800;margin-bottom:2px;}
+.tn-timeline b{font-size:15px;display:block;margin-bottom:3px;}
+.tn-timeline p{font-size:13.3px;color:var(--tn-ink-soft);margin:0;}
+.tn-partner-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:26px;}
+.tn-partner{
+  background:#fff;border:1px solid var(--tn-line);border-radius:14px;padding:14px 16px;
+  display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:700;color:var(--tn-ink-soft);
+  transition:.2s;
+}
+.tn-partner:hover{border-color:var(--tn-amber);transform:translateY(-2px);}
+.tn-partner i{width:10px;height:10px;border-radius:3px;background:var(--tn-amber);flex:none;}
+.tn-faq details{
+  background:#fff;border:1px solid var(--tn-line);border-radius:14px;padding:14px 18px;margin-bottom:10px;
+  transition:.2s;
+}
+.tn-faq details[open]{border-color:var(--tn-amber);box-shadow:var(--tn-shadow);}
+.tn-faq summary{
+  font-size:14.5px;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+.tn-faq summary::-webkit-details-marker{display:none;}
+.tn-faq summary::after{content:"+";font-size:18px;color:var(--tn-amber-deep);font-weight:800;flex:none;transition:.2s;}
+.tn-faq details[open] summary::after{content:"−";}
+.tn-faq p{font-size:13.4px;color:var(--tn-ink-soft);margin:10px 0 0;}
+
+/* ---------- 投稿 CTA ---------- */
+.tn-cta-band{
+  background:linear-gradient(120deg,#1b2430,#31404f 70%,#3c5064);color:#f6efe1;
+  border-radius:26px;padding:40px clamp(22px,4vw,48px);
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:26px;align-items:center;
+}
+.tn-cta-band h2{color:#fff;font-size:clamp(22px,2.8vw,30px);margin-bottom:8px;}
+.tn-cta-band p{color:#cfc5b2;font-size:14.5px;margin:0;max-width:560px;}
+.tn-cta-band .tn-actions{display:flex;gap:12px;flex-wrap:wrap;}
+
+/* ---------- 页脚 ---------- */
+.tn-footer{background:#161e27;color:#b8b0a0;padding:56px 0 0;font-size:13.5px;}
+.tn-footer-grid{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,.75fr));gap:32px;}
+.tn-footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.tn-footer-brand .tn-brand-mark{background:var(--tn-amber);}
+.tn-footer-brand .tn-brand-mark svg path{fill:#161e27;}
+.tn-footer-brand b{color:#fff;font-size:17px;letter-spacing:.02em;}
+.tn-footer p{color:#9b9384;max-width:320px;}
+.tn-footer h4{color:#fff;font-size:14px;margin-bottom:12px;letter-spacing:.06em;}
+.tn-footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;}
+.tn-footer a:hover{color:var(--tn-amber);}
+.tn-footer-bottom{
+  margin-top:40px;border-top:1px solid #2a3441;padding:20px 0;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#8a8274;
+}
+
+/* ---------- 弹窗 & Toast ---------- */
+.tn-modal-mask{
+  position:fixed;inset:0;background:rgba(20,26,34,.55);backdrop-filter:blur(4px);
+  display:none;align-items:center;justify-content:center;padding:22px;z-index:200;
+}
+.tn-modal-mask.is-open{display:flex;}
+.tn-modal{
+  background:var(--tn-cream);border-radius:22px;max-width:460px;width:100%;padding:28px;
+  box-shadow:var(--tn-shadow-lg);position:relative;max-height:86vh;overflow:auto;
+  animation:tnPop .22s ease;
+}
+@keyframes tnPop{from{transform:translateY(14px);opacity:0}to{transform:none;opacity:1}}
+.tn-modal h3{font-size:19px;margin-bottom:10px;}
+.tn-modal p{font-size:14px;color:var(--tn-ink-soft);}
+.tn-modal label{display:block;font-size:12.5px;font-weight:700;margin:14px 0 6px;color:var(--tn-ink-soft);}
+.tn-modal input,.tn-modal textarea{
+  width:100%;border:1px solid var(--tn-line);border-radius:10px;padding:10px 12px;
+  font-family:inherit;font-size:14px;background:#fff;outline:none;color:var(--tn-ink);
+}
+.tn-modal input:focus,.tn-modal textarea:focus{border-color:var(--tn-amber-deep);}
+.tn-modal textarea{min-height:96px;resize:vertical;}
+.tn-modal-close{
+  position:absolute;right:14px;top:14px;width:32px;height:32px;border-radius:50%;
+  background:#fff;border:1px solid var(--tn-line);font-size:16px;line-height:1;display:grid;place-items:center;
+}
+.tn-modal-close:hover{background:var(--tn-amber);}
+.tn-modal-ops{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;}
+.tn-share-grid{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+.tn-share-grid button{
+  border:1px solid var(--tn-line);background:#fff;border-radius:10px;padding:10px 16px;
+  font-size:13.5px;font-weight:700;transition:.2s;
+}
+.tn-share-grid button:hover{border-color:var(--tn-amber-deep);color:var(--tn-amber-deep);}
+.tn-toast{
+  position:fixed;left:50%;bottom:30px;transform:translate(-50%,20px);opacity:0;pointer-events:none;
+  background:var(--tn-ink);color:#fff;padding:11px 22px;border-radius:999px;font-size:13.5px;font-weight:600;
+  box-shadow:var(--tn-shadow-lg);transition:.28s;z-index:300;max-width:90vw;text-align:center;
+}
+.tn-toast.is-on{opacity:1;transform:translate(-50%,0);}
+
+/* ---------- 回到顶部 ---------- */
+.tn-top{
+  position:fixed;right:22px;bottom:26px;width:48px;height:48px;border-radius:50%;
+  background:var(--tn-ink);color:#fff;display:grid;place-items:center;box-shadow:var(--tn-shadow-lg);
+  opacity:0;pointer-events:none;transition:.28s;z-index:150;
+}
+.tn-top.is-on{opacity:1;pointer-events:auto;}
+.tn-top:hover{background:var(--tn-amber);color:var(--tn-ink);}
+.tn-top svg{width:18px;height:18px;}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:1024px){
+  .tn-hero-grid{grid-template-columns:1fr;gap:36px;}
+  .tn-hero-visual{max-width:560px;}
+  .tn-cta-band{grid-template-columns:1fr;}
+}
+@media (max-width:900px){
+  .tn-video-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .tn-topic-grid{grid-template-columns:1fr;}
+  .tn-about-grid{grid-template-columns:1fr;}
+  .tn-focus-grid{grid-template-columns:1fr;}
+  .tn-rank-grid{grid-template-columns:1fr;}
+  .tn-aux-grid{grid-template-columns:1fr;}
+  .tn-footer-grid{grid-template-columns:1fr 1fr;}
+  .tn-nav{
+    display:none;position:absolute;left:0;right:0;top:100%;background:var(--tn-cream);
+    border-bottom:1px solid var(--tn-line);padding:12px 22px 18px;box-shadow:var(--tn-shadow);
+    flex-direction:column;gap:2px;
+  }
+  .tn-nav.is-open{display:flex;}
+  .tn-nav a{padding:10px 12px;}
+  .tn-header-inner{position:relative;flex-wrap:wrap;}
+  .tn-burger{display:grid;}
+  .tn-search{min-width:0;flex:1 1 140px;order:3;}
+  .tn-head-tools{flex:1 1 auto;justify-content:flex-end;}
+  .tn-cta{display:none;}
+  .tn-anchor,section{scroll-margin-top:132px;}
+}
+@media (max-width:680px){
+  .tn-sec{padding:46px 0;}
+  .tn-video-grid{grid-template-columns:1fr;}
+  .tn-author-grid{grid-template-columns:1fr;}
+  .tn-comment-wrap{grid-template-columns:1fr;}
+  .tn-partner-grid{grid-template-columns:1fr;}
+  .tn-stats{grid-template-columns:1fr 1fr;}
+  .tn-footer-grid{grid-template-columns:1fr;}
+  .tn-hero-float{left:8px;bottom:8px;max-width:calc(100% - 16px);}
+  .tn-hero-pill{right:0;top:-10px;}
+  .tn-notice-list{gap:12px;}
+  .tn-notice-item{white-space:normal;}
+  .tn-essay{padding:26px 20px;}
+  .tn-author-card{grid-template-columns:52px minmax(0,1fr);}
+  .tn-avatar-lg{width:52px;height:52px;border-radius:16px;font-size:18px;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<a class="tn-skip" href="#tn-main">跳到主要内容</a>
+
+<!-- S1 公告条 + 页头（吸顶） -->
+<div class="tn-sticky-shell">
+  <div class="tn-notice" role="region" aria-label="站内公告">
+    <div class="tn-notice-inner">
+      <span class="tn-notice-tag">官方公告</span>
+      <div class="tn-notice-list">
+        <span class="tn-notice-item"><b>新专题上线</b>「大稻埕黄昏食单」第 3 集已发布<span class="tn-notice-time">11/21</span></span>
+        <span class="tn-notice-item"><b>征集中</b>冬季限定吃瓜地图 · 投稿通道开放<span class="tn-notice-time">11/20</span></span>
+        <span class="tn-notice-item"><b>更新</b>创作者后台支持 4K 原片上传<span class="tn-notice-time">11/18</span></span>
+      </div>
+    </div>
+  </div>
+  <header class="tn-header">
+    <div class="tn-header-inner">
+      <a class="tn-brand" href="#tn-top">
+        <span class="tn-brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="9" fill="#ffb648"/><path d="M13 11.5l9 4.5-9 4.5z" fill="#1b2430"/></svg>
+        </span>
+        <span class="tn-brand-text">
+          <span class="tn-brand-name">taipei_nana 今日吃瓜</span>
+          <span class="tn-brand-sub">CITY VIDEO COMMUNITY</span>
+        </span>
+      </a>
+      <nav class="tn-nav" id="tn-nav" aria-label="主导航">
+        <a href="#tn-focus">焦点</a>
+        <a href="#tn-videos">热门视频</a>
+        <a href="#tn-topics">专题企划</a>
+        <a href="#tn-essay">关键词解析</a>
+        <a href="#tn-authors">创作者</a>
+        <a href="#tn-voices">用户评价</a>
+        <a href="#tn-aux">动态与问答</a>
+      </nav>
+      <div class="tn-head-tools">
+        <form class="tn-search" id="tn-search-form" role="search" aria-label="站内搜索">
+          <input type="search" id="tn-search-input" placeholder="搜索视频 / 创作者 / 街头小店" autocomplete="off" aria-label="搜索关键词">
+          <button class="tn-search-btn" type="submit" aria-label="搜索">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1b2430" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21"/></svg>
+          </button>
+        </form>
+        <button class="tn-cta" type="button" data-tn-modal="submit">我要投稿</button>
+        <button class="tn-burger" id="tn-burger" type="button" aria-label="展开导航" aria-expanded="false" aria-controls="tn-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="tn-search-hint" id="tn-search-hint" role="status" aria-live="polite"></div>
+  </header>
+</div>
+
+<main id="tn-main">
+
+  <!-- S2 品牌首屏 5:5 -->
+  <section class="tn-hero tn-anchor" id="tn-top">
+    <div class="tn-wrap tn-hero-grid">
+      <div>
+        <span class="tn-hero-badge"><i></i>官方网站 · 原创高清城市影像社区</span>
+        <h1 class="tn-h1">taipei_nana <span class="tn-h1-accent">今日吃瓜</span></h1>
+        <p class="tn-hero-desc">一个把台北街头拍成连续剧的原创视频品牌。我们用镜头记录摊车的火候、巷口的聊天与创作者的手感，做值得信赖的城市生活影像平台，让每一次「吃瓜」都有真实的信息与人情味。</p>
+        <div class="tn-hero-actions">
+          <a class="tn-btn tn-btn-primary" href="#tn-videos">观看热门视频
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l12 7-12 7z"/></svg>
+          </a>
+          <a class="tn-btn tn-btn-ghost" href="#tn-authors">认识创作者</a>
+          <button class="tn-btn tn-btn-line" type="button" data-tn-share="taipei_nana 今日吃瓜 官方网站">分享本站</button>
+        </div>
+        <div class="tn-stats">
+          <div class="tn-stat"><b data-tn-count="1286">0</b><span>原创视频作品（条）</span></div>
+          <div class="tn-stat"><b data-tn-count="46">0</b><span>签约在地创作者（位）</span></div>
+          <div class="tn-stat"><b data-tn-count="93">0</b><span>合作街区小店（家）</span></div>
+        </div>
+      </div>
+      <div class="tn-hero-visual">
+        <span class="tn-hero-pill">本周 <em>放映中</em> · 大稻埕篇</span>
+        <figure>
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 680'%3E%3Cdefs%3E%3ClinearGradient id='sky' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23f9d9a3'/%3E%3Cstop offset='.5' stop-color='%23f2a65a'/%3E%3Cstop offset='1' stop-color='%23c96b3b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='680' fill='url(%23sky)'/%3E%3Ccircle cx='590' cy='180' r='72' fill='%23fff2cf' opacity='.9'/%3E%3Crect x='0' y='400' width='800' height='280' fill='%232a3440'/%3E%3Cg fill='%23384452'%3E%3Crect x='40' y='210' width='120' height='220'/%3E%3Crect x='190' y='170' width='90' height='260'/%3E%3Crect x='310' y='250' width='130' height='180'/%3E%3Crect x='470' y='190' width='100' height='240'/%3E%3Crect x='600' y='230' width='150' height='200'/%3E%3C/g%3E%3Cg fill='%23ffcf7a'%3E%3Crect x='60' y='240' width='20' height='26'/%3E%3Crect x='100' y='240' width='20' height='26'/%3E%3Crect x='60' y='290' width='20' height='26'/%3E%3Crect x='205' y='205' width='18' height='24'/%3E%3Crect x='235' y='205' width='18' height='24'/%3E%3Crect x='205' y='255' width='18' height='24'/%3E%3Crect x='490' y='230' width='20' height='26'/%3E%3Crect x='530' y='230' width='20' height='26'/%3E%3Crect x='620' y='270' width='22' height='26'/%3E%3Crect x='670' y='270' width='22' height='26'/%3E%3C/g%3E%3Cg%3E%3Crect x='250' y='430' width='300' height='16' rx='8' fill='%23e9c48a'/%3E%3Crect x='270' y='446' width='260' height='10' rx='5' fill='%23c9a06a'/%3E%3Ccircle cx='320' cy='418' r='28' fill='%23f6e3c1'/%3E%3Ccircle cx='400' cy='414' r='30' fill='%23ffe9bd'/%3E%3Ccircle cx='480' cy='419' r='26' fill='%23f6e3c1'/%3E%3Cpath d='M294 410q26 -22 52 0z' fill='%233c7a5b'/%3E%3Cpath d='M374 406q26 -24 52 0z' fill='%23d9534f'/%3E%3Cpath d='M456 412q24 -20 48 0z' fill='%233c7a5b'/%3E%3C/g%3E%3Cg stroke='%23f6ecd8' stroke-width='3' opacity='.75'%3E%3Cpath d='M120 0v80M700 0v60'/%3E%3C/g%3E%3C/svg%3E" alt="大稻埕黄昏街头小吃摊与老屋窗灯的城市影像主视觉" width="800" height="680" loading="eager">
+        </figure>
+        <div class="tn-hero-float">
+          <span class="tn-play-mini" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="#1b2430"><path d="M8 5l12 7-12 7z"/></svg>
+          </span>
+          <span>
+            <b>《大稻埕黄昏食单》第 3 集</b>
+            <span>4K 高清 · 12:48 · 今晚上线</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 企业简介 -->
+  <section class="tn-sec tn-anchor" id="tn-about">
+    <div class="tn-wrap tn-about-grid">
+      <div class="tn-about-card">
+        <h3>品牌速览 · Brand Brief</h3>
+        <p>taipei_nana 今日吃瓜 是深耕城市生活影像的原创内容品牌，以「真实、温暖、有信息量」为创作准则，持续运营面向大众的官方视频门户。</p>
+        <ul>
+          <li>成立于 2019 年，团队 18 人，在地创作者网络 46 位</li>
+          <li>自制栏目：街角食单、巷口访谈、一日手感、夜行地图</li>
+          <li>内容生态覆盖美食、在地文化、手作与城市探索</li>
+          <li>连续三年获评本地生活影像类品质口碑品牌</li>
+        </ul>
+      </div>
+      <div class="tn-about-text">
+        <span class="tn-kicker">关于我们</span>
+        <h2 class="tn-h2">把台北拍成一部可以慢慢看的长片</h2>
+        <p>taipei_nana 今日吃瓜 官方网站是一家专注于城市生活影像的视频品牌企业。我们相信「吃瓜」不该只是围观别人，而是一次一次走近真实现场：摊主翻炒的节奏、老店换招牌的那个下午、年轻创作者第一次把作品放上大屏幕时的紧张。平台以原创、正版、高清为基本要求，建立从选题、拍摄、剪辑到发布的完整内容生态，让每一支视频都能被检索、被讨论、被记住。</p>
+        <p>作为持续运营的垂直领域视频社区，我们与街区小店、地方文化团队、独立创作者长期合作，围绕城市探索、在地文化、生活方式与创作幕后展开内容布局。官方发布之外，平台开放投稿与共创，鼓励多元表达，也坚持用户至上与内容品质优先，用匠心打磨每一个 12 分钟。</p>
+        <p>我们的愿景很简单：让城市里值得被看见的人与味道，拥有一份长期保存的影像档案。品牌故事由无数个普通傍晚拼成，而我们愿意一直拍下去。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- S3 焦点内容：一幅重点大图 + 文字推荐 -->
+  <section class="tn-sec tn-anchor" id="tn-focus">
+    <div class="tn-wrap">
+      <span class="tn-kicker">本周焦点</span>
+      <h2 class="tn-h2">焦点推荐 · 编辑部挑出的四支片子</h2>
+      <p class="tn-lead">从时令食材到街区变迁，taipei_nana 今日吃瓜 每周精选值得完整看完的原创作品，适合下班后配一碗热汤。</p>
+      <div class="tn-focus-grid" style="margin-top:28px;">
+        <article class="tn-focus-main">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23223a3a'/%3E%3Crect x='0' y='330' width='800' height='170' fill='%23172a2a'/%3E%3Cg%3E%3Crect x='70' y='180' width='250' height='18' rx='9' fill='%23e8c98c'/%3E%3Crect x='90' y='198' width='210' height='12' rx='6' fill='%23b99a63'/%3E%3Ccircle cx='130' cy='164' r='26' fill='%23f3e2bd'/%3E%3Ccircle cx='200' cy='160' r='30' fill='%23ffeccb'/%3E%3Ccircle cx='270' cy='165' r='25' fill='%23f3e2bd'/%3E%3Cpath d='M106 156q24 -22 48 0z' fill='%23d9534f'/%3E%3Cpath d='M172 150q28 -24 56 0z' fill='%233c7a5b'/%3E%3C/g%3E%3Cg fill='%23e9c48a' opacity='.9'%3E%3Crect x='470' y='120' width='260' height='14' rx='7'/%3E%3Crect x='500' y='146' width='200' height='10' rx='5'/%3E%3Crect x='520' y='168' width='160' height='10' rx='5'/%3E%3C/g%3E%3Cg stroke='%237fb79b' stroke-width='4' fill='none' opacity='.8'%3E%3Cpath d='M620 300q40 -60 80 0'/%3E%3Cpath d='M660 300v90'/%3E%3C/g%3E%3Crect x='540' y='386' width='220' height='10' rx='5' fill='%233c7a5b'/%3E%3C/svg%3E" alt="深夜面摊汤锅热气与手写菜单的焦点视频封面" width="800" height="500" loading="lazy">
+          <div class="tn-focus-body">
+            <div class="tn-meta-row"><span>街角食单</span><span>12:48</span><span>4K 高清</span><span>11 月 21 日</span></div>
+            <h3>凌晨四点的汤锅：一家老面摊的三十年</h3>
+            <p>老板阿义每天三点半到店，先熬汤再揉面。这一集我们蹲了三个夜晚，拍下他如何凭手感判断火候，也拍下第一位客人推门时的那声「老样子」。一碗面的背后，是整条街的作息与信任。</p>
+            <div class="tn-focus-actions">
+              <button class="tn-like" type="button" data-tn-like aria-pressed="false">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.5-7 10-7 10z"/></svg>
+                <span data-tn-like-count>1284</span>
+              </button>
+              <button class="tn-fav" type="button" data-tn-fav aria-pressed="false">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12l3 6-9 12L3 9z"/></svg>
+                收藏
+              </button>
+              <button class="tn-btn tn-btn-line" type="button" data-tn-comment="凌晨四点的汤锅：一家老面摊的三十年">看评论</button>
+            </div>
+          </div>
+        </article>
+        <div class="tn-focus-list">
+          <article class="tn-focus-item">
+            <div class="tn-focus-num">01</div>
+            <div>
+              <h4>骑楼下的菜市场：早市三小时的声音采样</h4>
+              <p>跟着录音师走完一整条市场，听见叫卖、剁肉与找零的合奏，片尾附上完整声景。</p>
+              <small>在地文化 · 08:32 · 播放 9.6 万</small>
+            </div>
+          </article>
+          <article class="tn-focus-item">
+            <div class="tn-focus-num">02</div>
+            <div>
+              <h4>一块糕的手艺接力：母女俩的老铺改造记</h4>
+              <p>三十年的老铺交给女儿，旧模具保留、新包装上线，两人为糖度吵了整整一周。</p>
+              <small>创作幕后 · 15:10 · 播放 12.3 万</small>
+            </div>
+          </article>
+          <article class="tn-focus-item">
+            <div class="tn-focus-num">03</div>
+            <div>
+              <h4>夜行地图：从南京东路走到河岸的九十分钟</h4>
+              <p>一镜到底的城市夜行，只保留环境声。摄影师说这是他今年最想拍的路线。</p>
+              <small>城市探索 · 21:04 · 播放 7.8 万</small>
+            </div>
+          </article>
+          <article class="tn-focus-item">
+            <div class="tn-focus-num">04</div>
+            <div>
+              <h4>访谈：一个插画师如何画出整条街的人</h4>
+              <p>她把常去的早餐店、理发店全部画进速写本，这次我们请她现场画给店主看。</p>
+              <small>人物访谈 · 18:25 · 播放 5.4 万</small>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S3 热门视频流：三列等高卡片 -->
+  <section class="tn-sec tn-anchor" id="tn-videos">
+    <div class="tn-wrap">
+      <span class="tn-kicker">热门视频</span>
+      <h2 class="tn-h2">社区正在看 · 六支本周高热作品</h2>
+      <p class="tn-lead">来自 taipei_nana 今日吃瓜 官方与签约创作者，全部原创正版、支持高清播放。点击收藏，稍后配饭慢慢看。</p>
+      <div class="tn-video-grid" style="margin-top:28px;">
+
+        <article class="tn-video-card">
+          <div class="tn-video-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%23f2d9b0'/%3E%3Crect x='0' y='240' width='640' height='120' fill='%23a8663c'/%3E%3Cg fill='%23fff6e3'%3E%3Ccircle cx='150' cy='180' r='54'/%3E%3Ccircle cx='280' cy='196' r='46'/%3E%3Ccircle cx='410' cy='176' r='58'/%3E%3C/g%3E%3Cg fill='%23d9534f'%3E%3Ccircle cx='150' cy='164' r='14'/%3E%3Ccircle cx='410' cy='158' r='16'/%3E%3C/g%3E%3Cg fill='%233c7a5b'%3E%3Ccircle cx='280' cy='182' r='12'/%3E%3C/g%3E%3Crect x='80' y='300' width='480' height='14' rx='7' fill='%23804a28'/%3E%3Cg stroke='%23804a28' stroke-width='5'%3E%3Cpath d='M540 40v70M560 40v70'/%3E%3C/g%3E%3C/svg%3E" alt="三碗热气腾腾的汤面俯拍的街角美食视频封面" width="640" height="360" loading="lazy">
+            <span class="tn-video-cat">美食</span>
+            <span class="tn-video-dur">12:48</span>
+          </div>
+          <div class="tn-video-body">
+            <h3>凌晨四点的汤锅：一家老面摊的三十年</h3>
+            <p>三夜蹲守记录老面摊的作息，汤底配方第一次被完整讲出。</p>
+            <div class="tn-video-author"><span class="tn-avatar-sm" style="background:#c96b3b;">娜</span>taipei_nana 官方</div>
+            <div class="tn-video-data"><span>播放 12.4万</span><span>点赞 1.2万</span><span>收藏 3860</span></div>
+            <div class="tn-video-ops">
+              <button class="tn-op" type="button" data-tn-like><span data-tn-like-count>1284</span> 赞</button>
+              <button class="tn-op tn-op-fav" type="button" data-tn-fav>收藏</button>
+              <button class="tn-op" type="button" data-tn-comment="凌晨四点的汤锅">评论</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tn-video-card">
+          <div class="tn-video-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%232b3d4a'/%3E%3Cg fill='%23ffd27a' opacity='.9'%3E%3Crect x='60' y='60' width='16' height='24'/%3E%3Crect x='110' y='60' width='16' height='24'/%3E%3Crect x='160' y='60' width='16' height='24'/%3E%3Crect x='460' y='90' width='18' height='26'/%3E%3Crect x='520' y='90' width='18' height='26'/%3E%3C/g%3E%3Cg stroke='%23e6b25e' stroke-width='4' fill='none'%3E%3Cpath d='M0 300q160 -70 320 0t320 0'/%3E%3Cpath d='M0 330q160 -60 320 0t320 0' opacity='.5'/%3E%3C/g%3E%3Cg fill='%23f6ecd8'%3E%3Crect x='230' y='150' width='180' height='120' rx='10'/%3E%3C/g%3E%3Cg fill='%232b3d4a'%3E%3Crect x='250' y='170' width='50' height='40'/%3E%3Crect x='320' y='170' width='70' height='40'/%3E%3Crect x='250' y='226' width='140' height='24'/%3E%3C/g%3E%3C/svg%3E" alt="夜色街区霓虹与河岸倒影的城市夜行视频封面" width="640" height="360" loading="lazy">
+            <span class="tn-video-cat">城市</span>
+            <span class="tn-video-dur">21:04</span>
+          </div>
+          <div class="tn-video-body">
+            <h3>夜行地图：从南京东路走到河岸的九十分钟</h3>
+            <p>一镜到底、只留环境声的城市夜行，被评论区称为「最安静的攻略」。</p>
+            <div class="tn-video-author"><span class="tn-avatar-sm" style="background:#3c7a5b;">行</span>夜行摄影师 阿彻</div>
+            <div class="tn-video-data"><span>播放 7.8万</span><span>点赞 6420</span><span>收藏 2810</span></div>
+            <div class="tn-video-ops">
+              <button class="tn-op" type="button" data-tn-like><span data-tn-like-count>642</span> 赞</button>
+              <button class="tn-op tn-op-fav" type="button" data-tn-fav>收藏</button>
+              <button class="tn-op" type="button" data-tn-comment="夜行地图">评论</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tn-video-card">
+          <div class="tn-video-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%23efe4d2'/%3E%3Cg fill='%23d9c6a8'%3E%3Crect x='0' y='260' width='640' height='100'/%3E%3C/g%3E%3Cg fill='%23b98f5e'%3E%3Crect x='90' y='120' width='150' height='140' rx='14'/%3E%3Crect x='400' y='140' width='130' height='120' rx='14'/%3E%3C/g%3E%3Cg fill='%23fff8ec'%3E%3Ccircle cx='165' cy='190' r='34'/%3E%3Ccircle cx='465' cy='200' r='28'/%3E%3C/g%3E%3Cg stroke='%23805f3a' stroke-width='4' fill='none'%3E%3Cpath d='M320 130v120M290 150h60M290 200h60'/%3E%3C/g%3E%3Ccircle cx='320' cy='120' r='16' fill='%233c7a5b'/%3E%3C/svg%3E" alt="案板上手作糕点与老模具的制作现场视频封面" width="640" height="360" loading="lazy">
+            <span class="tn-video-cat">手作</span>
+            <span class="tn-video-dur">15:10</span>
+          </div>
+          <div class="tn-video-body">
+            <h3>一块糕的手艺接力：母女俩的老铺改造记</h3>
+            <p>旧模具、新包装、糖度之争，两代人的手艺如何在街口落地。</p>
+            <div class="tn-video-author"><span class="tn-avatar-sm" style="background:#b98f5e;">糕</span>手作观察员 小满</div>
+            <div class="tn-video-data"><span>播放 12.3万</span><span>点赞 9860</span><span>收藏 4120</span></div>
+            <div class="tn-video-ops">
+              <button class="tn-op" type="button" data-tn-like><span data-tn-like-count>986</span> 赞</button>
+              <button class="tn-op tn-op-fav" type="button" data-tn-fav>收藏</button>
+              <button class="tn-op" type="button" data-tn-comment="一块糕的手艺接力">评论</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tn-video-card">
+          <div class="tn-video-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%23434a6b'/%3E%3Cg fill='%23f2e6cf' opacity='.92'%3E%3Crect x='60' y='70' width='200' height='130' rx='8'/%3E%3C/g%3E%3Cg stroke='%23f2e6cf' stroke-width='4' fill='none'%3E%3Cpath d='M90 110h140M90 140h110M90 168h90'/%3E%3C/g%3E%3Cg fill='%23ffcf7a'%3E%3Ccircle cx='430' cy='130' r='52'/%3E%3C/g%3E%3Cg fill='%23434a6b'%3E%3Cpath d='M406 108q24 18 24 22t-24 22z'/%3E%3C/g%3E%3Crect x='0' y='280' width='640' height='80' fill='%232f3550'/%3E%3C/svg%3E" alt="速写本与铅笔记录街区人物的插画访谈视频封面" width="640" height="360" loading="lazy">
+            <span class="tn-video-cat">访谈</span>
+            <span class="tn-video-dur">18:25</span>
+          </div>
+          <div class="tn-video-body">
+            <h3>访谈：一个插画师如何画出整条街的人</h3>
+            <p>她把早餐店、理发店全画进速写本，这次现场画给店主看。</p>
+            <div class="tn-video-author"><span class="tn-avatar-sm" style="background:#434a6b;">画</span>访谈主编 阿岛</div>
+            <div class="tn-video-data"><span>播放 5.4万</span><span>点赞 4310</span><span>收藏 1980</span></div>
+            <div class="tn-video-ops">
+              <button class="tn-op" type="button" data-tn-like><span data-tn-like-count>431</span> 赞</button>
+              <button class="tn-op tn-op-fav" type="button" data-tn-fav>收藏</button>
+              <button class="tn-op" type="button" data-tn-comment="插画师如何画出整条街的人">评论</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tn-video-card">
+          <div class="tn-video-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%23cfe0d3'/%3E%3Cg fill='%233c7a5b'%3E%3Cpath d='M0 250q160 -90 320 -20t320 -30v160H0z'/%3E%3C/g%3E%3Cg fill='%23f6ecd8'%3E%3Ccircle cx='160' cy='120' r='40'/%3E%3Ccircle cx='440' cy='100' r='34'/%3E%3C/g%3E%3Cg stroke='%23977b52' stroke-width='6' fill='none'%3E%3Cpath d='M300 220v90M260 250h80'/%3E%3C/g%3E%3Crect x='240' y='300' width='120' height='10' rx='5' fill='%23977b52'/%3E%3Cg fill='%23d9534f'%3E%3Ccircle cx='320' cy='196' r='14'/%3E%3C/g%3E%3C/svg%3E" alt="公园草地野餐与手冲咖啡的生活记录视频封面" width="640" height="360" loading="lazy">
+            <span class="tn-video-cat">生活</span>
+            <span class="tn-video-dur">09:40</span>
+          </div>
+          <div class="tn-video-body">
+            <h3>周末野餐实操指南：一壶手冲和三个人的午餐</h3>
+            <p>从打包清单到现场摆盘，把露营与咖啡两个兴趣合成一次轻量实验。</p>
+            <div class="tn-video-author"><span class="tn-avatar-sm" style="background:#3c7a5b;">野</span>露营与咖啡 阿禾</div>
+            <div class="tn-video-data"><span>播放 6.2万</span><span>点赞 5120</span><span>收藏 2260</span></div>
+            <div class="tn-video-ops">
+              <button class="tn-op" type="button" data-tn-like><span data-tn-like-count>512</span> 赞</button>
+              <button class="tn-op tn-op-fav" type="button" data-tn-fav>收藏</button>
+              <button class="tn-op" type="button" data-tn-comment="周末野餐实操指南">评论</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tn-video-card">
+          <div class="tn-video-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%23e8d9c4'/%3E%3Cg fill='%23a5654a'%3E%3Crect x='0' y='250' width='640' height='110'/%3E%3C/g%3E%3Cg fill='%23f6ecd8'%3E%3Crect x='100' y='90' width='440' height='150' rx='12'/%3E%3C/g%3E%3Cg fill='%23333b45'%3E%3Crect x='130' y='120' width='80' height='90' rx='6'/%3E%3Crect x='230' y='120' width='80' height='90' rx='6'/%3E%3Crect x='330' y='120' width='80' height='90' rx='6'/%3E%3Crect x='430' y='120' width='80' height='90' rx='6'/%3E%3C/g%3E%3Cg fill='%23ffcf7a'%3E%3Ccircle cx='170' cy='165' r='18'/%3E%3Ccircle cx='270' cy='165' r='18'/%3E%3Ccircle cx='370' cy='165' r='18'/%3E%3Ccircle cx='470' cy='165' r='18'/%3E%3C/g%3E%3C/svg%3E" alt="剪辑台上多机位素材排布的创作幕后视频封面" width="640" height="360" loading="lazy">
+            <span class="tn-video-cat">幕后</span>
+            <span class="tn-video-dur">14:22</span>
+          </div>
+          <div class="tn-video-body">
+            <h3>创作幕后：一支 12 分钟片子是怎么剪出来的</h3>
+            <p>公开三次大改的剪辑时间线，也承认拍废的两个整晚。</p>
+            <div class="tn-video-author"><span class="tn-avatar-sm" style="background:#a5654a;">剪</span>后期工作室 阿陆</div>
+            <div class="tn-video-data"><span>播放 4.9万</span><span>点赞 3980</span><span>收藏 1740</span></div>
+            <div class="tn-video-ops">
+              <button class="tn-op" type="button" data-tn-like><span data-tn-like-count>398</span> 赞</button>
+              <button class="tn-op tn-op-fav" type="button" data-tn-fav>收藏</button>
+              <button class="tn-op" type="button" data-tn-comment="创作幕后剪辑">评论</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- S4 专题企划 -->
+  <section class="tn-sec tn-anchor" id="tn-topics">
+    <div class="tn-wrap">
+      <span class="tn-kicker">专题企划</span>
+      <h2 class="tn-h2">正在更新的三个长期企划</h2>
+      <p class="tn-lead">专题是 taipei_nana 今日吃瓜 内容生态的骨架，每个企划至少持续更新一年，让观众能一路跟着街区变化。</p>
+      <div class="tn-topic-grid" style="margin-top:28px;">
+        <article class="tn-topic-card tn-topic-feature">
+          <span class="tn-topic-state">更新至第 3 集 · 每周三</span>
+          <h3>大稻埕黄昏食单</h3>
+          <p>沿着河岸走，一家一家吃过去。我们把镜头放在摊主的手与客人的表情之间，做一份可以按图索骥的黄昏食单。</p>
+          <ul class="tn-topic-list">
+            <li>第 1 集：老铺的卤肉饭，三小时熬一锅酱 <span>已发布</span></li>
+            <li>第 2 集：骑楼下那家卖四十年甜汤的摊子 <span>已发布</span></li>
+            <li>第 3 集：黄昏开张的炸物车与它的熟客 <span>11/21 上线</span></li>
+          </ul>
+        </article>
+        <article class="tn-topic-card">
+          <span class="tn-topic-state">更新至第 7 期 · 每月</span>
+          <h3>巷口访谈录</h3>
+          <p>不谈宏大命题，只问街坊一个问题：你在这里住了多久？每期一位普通居民与一位创作者对坐。</p>
+          <ul class="tn-topic-list">
+            <li>第 5 期：理发店老板与他的四十年老照片 <span>已发布</span></li>
+            <li>第 6 期：市场里写生的高中生 <span>已发布</span></li>
+            <li>第 7 期：修鞋铺第三代愿不愿意接手 <span>已发布</span></li>
+          </ul>
+        </article>
+        <article class="tn-topic-card">
+          <span class="tn-topic-state">征集中 · 冬季特别企划</span>
+          <h3>今冬吃瓜地图</h3>
+          <p>邀请社区共创：投票选出你心里最值得推荐的十家小店，我们逐一去拍，做成一张可分享的冬日地图。</p>
+          <ul class="tn-topic-list">
+            <li>投稿通道开放中，上传素材即可参与 <span>进行中</span></li>
+            <li>每周公布一次实时票数排行 <span>进行中</span></li>
+            <li>入选作者获得官方联合署名 <span>待公布</span></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关键词解析：800 字以上 -->
+  <section class="tn-sec tn-anchor" id="tn-essay">
+    <div class="tn-wrap">
+      <div class="tn-essay">
+        <span class="tn-kicker">关键词解析</span>
+        <h2 class="tn-h2">为什么是「taipei_nana 今日吃瓜」</h2>
+        <p>很多人第一次看到这个组合，会以为它只是一句轻松的网感表达。但对 taipei_nana 今日吃瓜 来说，它其实是一次很郑重的自我定位：taipei 指向城市与在地，nana 是人称也是陪伴感，「今日吃瓜」则把镜头对准每天都在发生、却常常被忽略的小现场。作为一家持续运营的视频品牌官网，我们希望把这三个层面讲清楚，也把「吃瓜」理解为一种认真围观、认真核实、认真记录的观看伦理。</p>
+
+        <h3>一、城市在地：把台北拍成可检索的影像档案</h3>
+        <p>在地不是一个抽象标签，它意味着具体到某条街、某个门牌、某个时刻。我们的拍摄清单里有大稻埕的黄昏摊车，有早市三小时的声景采样，也有骑楼下换了三次招牌的甜汤铺。每支视频上线时都标注拍摄日期、街区、商铺名称与受访者，方便观众按图索骥，也方便店主日后回看。taipei_nana 今日吃瓜 的平台设计同样围绕「可检索」展开：搜索框支持按店名、品类、创作者筛选，视频条目公开播放、点赞与收藏数据，评论区保留真实的地理补充。我们不做一次性热点，而是把每一次拍摄都视为城市影像档案的一页。官网每年会整理一次年度目录，把当年新增的街区、受访者与选题方向汇总公开，让企业、创作者与普通观众都能看到这座城市被记录到什么程度。</p>
+        <p>在具体执行上，我们坚持三个小规矩：第一，拍摄前一定与店主沟通使用范围，涉及面部正脸的画面逐条确认；第二，涉及价格的画面必须现场核对，避免误导；第三，不剪辑出与原意相反的对话。这些规矩看起来笨，但正是它们让「吃瓜」不至于变成围观与消费。平台深耕垂直领域三年多，靠的不是标题党，而是这种笨办法积累的口碑。很多观众留言说，看完片子会真的去店里走一趟——这对我们来说是最高的评价。</p>
+
+        <h3>二、社区共创：创作者、店主与观众的三角关系</h3>
+        <p>视频不只是成片，它同时是一条关系链。taipei_nana 今日吃瓜 的内容生态里，创作者负责发现与表达，店主提供现场与知识，观众提供反馈与二次传播，三者共同决定一个选题能不能继续。我们的签约创作者不是签约艺人，而是长期合作的在地拍摄者：有人专拍夜行，有人专拍手作，有人只做访谈。每位作者都有独立的作品页、领域标签与更新节奏，观众可以关注、可以投稿、可以在评论区提出下一次的拍摄建议。平台定期开放联合投稿，入选作品会以官方联合署名发布，这对新人创作者是很实际的鼓励。</p>
+        <p>社区活力也体现在「可参与」上。今冬吃瓜地图就是一次公开征集：观众投票、店铺报名、创作者认领拍摄，最后拼成一张可分享的地图。我们为此设置了简单的投稿表单、投票入口与实时排行，整个过程在官网公开。对一家视频企业来说，这种共创不是营销话术，而是内容生产的实际机制——它让选题来自真实的生活半径，也让创作者获得持续的正向反馈。用户至上，本质上是把观众当同行者，而不是流量数字。</p>
+
+        <h3>三、品牌方法：用「今日」保持节奏，用「吃瓜」保持诚实</h3>
+        <p>「今日」两个字是我们对更新节奏的承诺。官方栏目每周三固定更新，巷口访谈每月一期，专题企划按季度收尾，企业动态与更新日志同步公开。固定的节奏带来确定的期待，也让团队必须持续在城里走动，而不是坐在会议室里想选题。为了保证品质，我们保留了一支 18 人的小团队，拍摄、剪辑、审核分开负责，每条片子至少两次内部看片。品牌故事不靠一篇宣言，而是靠这些日复一日的流程支撑起来。</p>
+        <p>「吃瓜」则提醒我们保持诚实。围观容易滑向猎奇，所以我们在片头统一标注信息等级：现场实录、访谈转述、资料整理。评论区也明确规定不得进行人身攻击与未经核实的指控，违规内容会被折叠。我们不追求短期爆款，更看重值得信赖的长期口碑。社会责任对你我这样的内容品牌并不是空话，它具体表现为：不拍未经同意的人，不编造未经核实的数字，不用标题骗取点击。这些原则写进了我们的创作者手册，也成为对外合作时的基本条款。</p>
+        <p>回到关键词本身：taipei_nana 今日吃瓜 是一个品牌名，也是一个工作方法。它以城市为素材库，以人物为线索，以社区为回路，用原创、正版、高清的视频把日常保存下来。我们相信，一座城市真正的魅力不在明信片里，而在摊车收摊时那句「明天见」。官网会继续把这些瞬间整理成栏目、专题与索引，让更多人能够随时点开、反复观看、并愿意亲自走一趟。这就是我们理解的「今日吃瓜」：不喧哗，但一直在场；不夸张，但足够真实。</p>
+
+        <div class="tn-essay-note">内容声明：本页所涉店名、人物与数据均为品牌内容示例，用于展示 taipei_nana 今日吃瓜 官方网站的内容结构与运营方式；实际合作与拍摄计划以官方发布为准。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S5 作者矩阵：双列简介 -->
+  <section class="tn-sec tn-anchor" id="tn-authors">
+    <div class="tn-wrap">
+      <span class="tn-kicker">创作者矩阵</span>
+      <h2 class="tn-h2">六位长期合作的在地创作者</h2>
+      <p class="tn-lead">他们是 taipei_nana 今日吃瓜 内容生态里最稳定的生产力，也是观众愿意反复回访的理由。</p>
+      <div class="tn-author-grid" style="margin-top:28px;">
+
+        <article class="tn-author-card">
+          <span class="tn-avatar-lg" style="background:linear-gradient(140deg,#c96b3b,#e6a35a);">娜</span>
+          <div>
+            <h3>娜娜 Nana</h3>
+            <div class="tn-author-field">美食 · 城市在地文化</div>
+            <p>频道主理人，做了八年美食记者后转做视频。偏爱拍收摊前的十分钟，认为那是一天里最松弛的时刻。习惯先吃完再开机，坚持每支片子都给出可核对的店址信息。</p>
+            <div class="tn-author-stats"><span>作品 186</span><span>粉丝 32.4万</span><span>更新 每周三</span></div>
+            <div class="tn-author-ops">
+              <button class="tn-op" type="button" data-tn-author="娜娜 Nana">作者详情</button>
+              <button class="tn-op tn-op-fav" type="button" data-tn-fav>关注</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tn-author-card">
+          <span class="tn-avatar-lg" style="background:linear-gradient(140deg,#2b3d4a,#5a7184);">彻</span>
+          <div>
+            <h3>阿彻 · 夜行摄影师</h3>
+            <div class="tn-author-field">城市探索 · 声景记录</div>
+            <p>擅长一镜到底与环境声采集，随身带两台录音设备。认为夜里的城市更诚实，因此常从晚上十点走到凌晨。作品多次被用于城市导览，也会公开拍摄路线的完整地图。</p>
+            <div class="tn-author-stats"><span>作品 92</span><span>粉丝 12.8万</span><span>更新 每月两期</span></div>
+            <div class="tn-author-ops">
+              <button class="tn-op" type="button" data-tn-author="阿彻 · 夜行摄影师">作者详情</button>
+              <button class="tn-op tn-op-fav" type="button" data-tn-fav>关注</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tn-author-card">
+          <span class="tn-avatar-lg" style="background:linear-gradient(140deg,#b98f5e,#dcc39a);">满</span>
+          <div>
+            <h3>小满 · 手作观察员</h3>
+            <div class="tn-author-field">手作 DIY · 创作幕后</div>
+            <p>原本是产品设计师，因为买了一台老缝纫机开始拍手艺人。镜头里常出现工具特写与失败过程，她坚持保留返工片段，认为那才是手艺真正的样子。现负责平台手作类专题。</p>
+            <div class="tn-author-stats"><span>作品 74</span><span>粉丝 9.6万</span><span>更新 每两周一期</span></div>
+            <div class="tn-author-ops">
+              <button class="tn-op" type="button" data-tn-author="小满 · 手作观察员">作者详情</button>
+              <button class="tn-op tn-op-fav" type="button" data-tn-fav>关注</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tn-author-card">
+          <span class="tn-avatar-lg" style="background:linear-gradient(140deg,#434a6b,#7b84a8);">岛</span>
+          <div>
+            <h3>阿岛 · 访谈主编</h3>
+            <div class="tn-author-field">人物访谈 · 文化访谈</div>
+            <p>提问很慢，剪辑也慢。她相信一次好的访谈需要两次沉默，所以在片子里保留长停顿。采访对象从早餐店老板到独立插画师，擅长把宏大问题拆成日常细节，是团队里最会听的人。</p>
+            <div class="tn-author-stats"><span>作品 118</span><span>粉丝 15.2万</span><span>更新 每月一期</span></div>
+            <div class="tn-author-ops">
+              <button class="tn-op" type="button" data-tn-author="阿岛 · 访谈主编">作者详情</button>
+              <button class="tn-op tn-op-fav" type="button" data-tn-fav>关注</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tn-author-card">
+          <span class="tn-avatar-lg" style="background:linear-gradient(140deg,#3c7a5b,#7fb79b);">禾</span>
+          <div>
+            <h3>阿禾 · 露营与咖啡</h3>
+            <div class="tn-author-field">户外活动 · 生活方式</div>
+            <p>周末基本都在郊外，擅长把装备清单拍成可执行的教程。他反对「摆拍式露营」，会在视频里如实标出风雨天气与失败餐食。最近在做一个城市边缘的野地系列，反响不错。</p>
+            <div class="tn-author-stats"><span>作品 63</span><span>粉丝 8.1万</span><span>更新 每周一期</span></div>
+            <div class="tn-author-ops">
+              <button class="tn-op" type="button" data-tn-author="阿禾 · 露营与咖啡">作者详情</button>
+              <button class="tn-op tn-op-fav" type="button" data-tn-fav>关注</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tn-author-card">
+          <span class="tn-avatar-lg" style="background:linear-gradient(140deg,#a5654a,#d8a184);">陆</span>
+          <div>
+            <h3>阿陆 · 后期工作室</h3>
+            <div class="tn-author-field">教程干货 · 剪辑思路</div>
+            <p>团队后期负责人，负责把几百分钟素材变成十二分钟。他愿意公开自己的时间线与失误，常在视频里讲「为什么这一段被删掉」。开设剪辑教程系列，是新创作者最常看的内容之一。</p>
+            <div class="tn-author-stats"><span>作品 57</span><span>粉丝 6.4万</span><span>更新 每月两期</span></div>
+            <div class="tn-author-ops">
+              <button class="tn-op" type="button" data-tn-author="阿陆 · 后期工作室">作者详情</button>
+              <button class="tn-op tn-op-fav" type="button" data-tn-fav>关注</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- S6 数据榜单 -->
+  <section class="tn-sec tn-anchor" id="tn-rank">
+    <div class="tn-wrap">
+      <span class="tn-kicker">数据榜单</span>
+      <h2 class="tn-h2">本周榜单 · 热度、新人、口碑</h2>
+      <p class="tn-lead">榜单数据每小时更新一次，透明度是 taipei_nana 今日吃瓜 建立长期口碑的方式之一。</p>
+      <div class="tn-rank-grid" style="margin-top:28px;">
+        <div class="tn-rank-col">
+          <h3><span>热</span>热度榜</h3>
+          <ol>
+            <li><b>凌晨四点的汤锅</b><em>12.4万</em></li>
+            <li><b>一块糕的手艺接力</b><em>12.3万</em></li>
+            <li><b>骑楼下的菜市场声景</b><em>9.6万</em></li>
+            <li><b>夜行地图 · 南京东路</b><em>7.8万</em></li>
+            <li><b>周末野餐实操指南</b><em>6.2万</em></li>
+          </ol>
+        </div>
+        <div class="tn-rank-col">
+          <h3><span>新</span>新人榜</h3>
+          <ol>
+            <li><b>高中生的一天通学路</b><em>@课桌旁</em></li>
+            <li><b>菜市场里的一百种颜色</b><em>@阿彩</em></li>
+            <li><b>修鞋铺的十二把刀</b><em>@小钉</em></li>
+            <li><b>雨天的骑楼速写</b><em>@纸与笔</em></li>
+            <li><b>从甜汤摊学到的定价</b><em>@数字糖</em></li>
+          </ol>
+        </div>
+        <div class="tn-rank-col">
+          <h3><span>碑</span>口碑榜</h3>
+          <ol>
+            <li><b>巷口访谈录 · 第 7 期</b><em>4.9 分</em></li>
+            <li><b>大稻埕黄昏食单 · 第 2 集</b><em>4.8 分</em></li>
+            <li><b>创作幕后：剪辑时间线</b><em>4.7 分</em></li>
+            <li><b>夜行地图 · 河岸段</b><em>4.7 分</em></li>
+            <li><b>一块糕的手艺接力</b><em>4.6 分</em></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S6 用户评价：双列短评 -->
+  <section class="tn-sec tn-anchor" id="tn-voices">
+    <div class="tn-wrap">
+      <span class="tn-kicker">用户评价</span>
+      <h2 class="tn-h2">来自社区的八条真实反馈</h2>
+      <p class="tn-lead">有夸奖也有建议，我们照单全收，并把这些意见带进下一轮选题会。</p>
+      <div class="tn-comment-wrap" style="margin-top:28px;">
+
+        <article class="tn-comment">
+          <span class="tn-avatar-sm" style="background:#c96b3b;">林</span>
+          <div class="tn-comment-body">
+            <div class="tn-comment-head"><b>林小姐</b><span>11/21</span></div>
+            <p>看完汤锅那期，第二天真的六点去吃了一次。老板还问是不是看了视频来的，笑死。店址写得清楚，这点很加分。</p>
+            <span class="tn-stars">★★★★★</span>
+          </div>
+        </article>
+
+        <article class="tn-comment">
+          <span class="tn-avatar-sm" style="background:#3c7a5b;">陈</span>
+          <div class="tn-comment-body">
+            <div class="tn-comment-head"><b>陈同学</b><span>11/20</span></div>
+            <p>摄影课的作业我参考了夜行地图的分镜，环境声处理太舒服了。希望以后能多出一点拍摄参数，别只讲氛围。</p>
+            <span class="tn-stars">★★★★☆</span>
+          </div>
+        </article>
+
+        <article class="tn-comment">
+          <span class="tn-avatar-sm" style="background:#b98f5e;">王</span>
+          <div class="tn-comment-body">
+            <div class="tn-comment-head"><b>王太太</b><span>11/19</span></div>
+            <p>手作那期保留返工片段的做法我很喜欢，现在很多片子只拍成功的部分，看起来不真实。女儿看完说想学做糕。</p>
+            <span class="tn-stars">★★★★★</span>
+          </div>
+        </article>
+
+        <article class="tn-comment">
+          <span class="tn-avatar-sm" style="background:#434a6b;">周</span>
+          <div class="tn-comment-body">
+            <div class="tn-comment-head"><b>周先生</b><span>11/18</span></div>
+            <p>访谈节奏稍微慢了一点，中间有几处停顿过长。但问题问得好，没有那种套话式的提问，还是愿意看完。</p>
+            <span class="tn-stars">★★★★☆</span>
+          </div>
+        </article>
+
+        <article class="tn-comment">
+          <span class="tn-avatar-sm" style="background:#a5654a;">黄</span>
+          <div class="tn-comment-body">
+            <div class="tn-comment-head"><b>黄阿伯</b><span>11/17</span></div>
+            <p>我在这条街住了四十年，第一次看到有人把骑楼拍得这么细。谢谢你们记下来，以后可以给孙子看。</p>
+            <span class="tn-stars">★★★★★</span>
+          </div>
+        </article>
+
+        <article class="tn-comment">
+          <span class="tn-avatar-sm" style="background:#7fb79b;">许</span>
+          <div class="tn-comment-body">
+            <div class="tn-comment-head"><b>许小姐</b><span>11/16</span></div>
+            <p>投稿流程比想象中简单，上传素材之后两天就收到回复，虽然没入选但给了很具体的修改建议，挺暖的。</p>
+            <span class="tn-stars">★★★★☆</span>
+          </div>
+        </article>
+
+        <article class="tn-comment">
+          <span class="tn-avatar-sm" style="background:#d9534f;">吴</span>
+          <div class="tn-comment-body">
+            <div class="tn-comment-head"><b>吴先生</b><span>11/15</span></div>
+            <p>建议榜单加一个「按街区筛选」，现在想找自己家附近的内容要翻很久。整体内容品质没得说，希望越做越好。</p>
+            <span class="tn-stars">★★★★☆</span>
+          </div>
+        </article>
+
+        <article class="tn-comment">
+          <span class="tn-avatar-sm" style="background:#e08a17;">蔡</span>
+          <div class="tn-comment-body">
+            <div class="tn-comment-head"><b>蔡同学</b><span>11/14</span></div>
+            <p>剪辑幕后那期我反复看了三遍，把时间线的取舍讲得很诚实。作为学生，这种不藏私的内容真的很少见。</p>
+            <span class="tn-stars">★★★★★</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- S7 辅助区：企业动态 + 合作品牌 + FAQ -->
+  <section class="tn-sec tn-anchor" id="tn-aux">
+    <div class="tn-wrap">
+      <span class="tn-kicker">动态与问答</span>
+      <h2 class="tn-h2">企业动态、合作伙伴与常见问题</h2>
+      <div class="tn-aux-grid" style="margin-top:26px;">
+
+        <div>
+          <h3 style="font-size:17px;margin-bottom:16px;">企业动态 · 官方发布</h3>
+          <ul class="tn-timeline">
+            <li>
+              <time>2026 年 11 月 21 日</time>
+              <b>「大稻埕黄昏食单」第 3 集上线</b>
+              <p>本期聚焦黄昏开张的炸物车，完整记录备料到收摊，并首次公开拍摄清单模板，供社区创作者取用。</p>
+            </li>
+            <li>
+              <time>2026 年 11 月 20 日</time>
+              <b>今冬吃瓜地图开启共创征集</b>
+              <p>观众可投票推荐小店，创作者可认领拍摄。入选作品将以官方联合署名发布，投稿通道持续开放至 12 月中旬。</p>
+            </li>
+            <li>
+              <time>2026 年 11 月 18 日</time>
+              <b>创作者后台支持 4K 原片上传</b>
+              <p>上传与转码流程同步优化，单文件上限提升。所有素材仅用于投稿审核，未经授权不会对外发布。</p>
+            </li>
+            <li>
+              <time>2026 年 11 月 12 日</time>
+              <b>与三家街区书店达成内容合作</b>
+              <p>未来将围绕阅读与街区生活推出联合企划，延续平台在地文化方向，欢迎更多伙伴联系洽谈。</p>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 style="font-size:17px;margin-bottom:16px;">合作品牌与伙伴</h3>
+          <div class="tn-partner-grid">
+            <div class="tn-partner"><i></i>河岸书屋 · 街区阅读</div>
+            <div class="tn-partner"><i style="background:#3c7a5b;"></i>老铺糕点工坊</div>
+            <div class="tn-partner"><i style="background:#d9534f;"></i>骑楼咖啡合作社</div>
+            <div class="tn-partner"><i style="background:#434a6b;"></i>独立影像器材行</div>
+          </div>
+          <h3 style="font-size:17px;margin:6px 0 16px;">常见问题</h3>
+          <div class="tn-faq">
+            <details>
+              <summary>投稿需要通过审核吗？大概多久？</summary>
+              <p>需要。所有投稿会经过选题、画面授权与信息核对三道审核，正常在两个工作日内回复。若未通过，我们会给出具体可修改的意见。</p>
+            </details>
+            <details>
+              <summary>拍到的店家和路人有肖像问题怎么处理？</summary>
+              <p>拍摄前我们会与店主确认使用范围，正脸画面逐条核对。社区投稿若涉及清晰人脸，需提供受访者同意说明，未提供的画面会被打码或去掉。</p>
+            </details>
+            <details>
+              <summary>网站的视频可以转载或二次剪辑吗？</summary>
+              <p>本站内容均为原创正版，未经书面授权请勿搬运或商用。个人学习性质的引用请保留片头与出处，并注明「taipei_nana 今日吃瓜 官方发布」。</p>
+            </details>
+            <details>
+              <summary>如何联系合作或进行品牌投放？</summary>
+              <p>可通过页面下方的联系邮箱说明合作方向与预算范围，我们会在三个工作日内回复。平台对合作内容有明确的标注要求，不接受伪装成日常记录的商业内容。</p>
+            </details>
+            <details>
+              <summary>榜单数据是怎么统计的？会不会刷量？</summary>
+              <p>榜单综合播放完成度、互动与收藏加权计算，同一账号短时间异常互动会被降权。我们公开计算口径，也接受社区监督，发现问题可随时反馈。</p>
+            </details>
+            <details>
+              <summary>能拍到其他城市吗？</summary>
+              <p>会。平台以城市生活影像为主线，未来计划以短期驻留方式记录更多城市，欢迎当地创作者与在地团队联系我们，共同策划拍摄路线。</p>
+            </details>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 投稿 CTA -->
+  <section class="tn-sec tn-anchor" id="tn-submit">
+    <div class="tn-wrap">
+      <div class="tn-cta-band">
+        <div>
+          <h2>把你身边的那一碗拍给我们看</h2>
+          <p>无论是摊车、老铺、还是某个只在雨天出现的小角落，taipei_nana 今日吃瓜 都欢迎你上传。入选作品将由官方联合署名发布，并获得平台推荐位与创作激励。</p>
+        </div>
+        <div class="tn-actions">
+          <button class="tn-btn tn-btn-primary" type="button" data-tn-modal="submit">我要投稿</button>
+          <button class="tn-btn tn-btn-line" type="button" data-tn-modal="report">意见与举报</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- S8 页脚 -->
+<footer class="tn-footer">
+  <div class="tn-wrap">
+    <div class="tn-footer-grid">
+      <div>
+        <div class="tn-footer-brand">
+          <span class="tn-brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="9" fill="#1b2430"/><path d="M13 11.5l9 4.5-9 4.5z" fill="#ffb648"/></svg>
+          </span>
+          <b>taipei_nana 今日吃瓜</b>
+        </div>
+        <p>原创城市生活影像社区，用高清视频记录街区、手艺与人的日常。持续运营，官方发布，内容品质优先。</p>
+      </div>
+      <div>
+        <h4>内容栏目</h4>
+        <ul>
+          <li><a href="#tn-videos">街角食单</a></li>
+          <li><a href="#tn-videos">巷口访谈录</a></li>
+          <li><a href="#tn-topics">专题企划</a></li>
+          <li><a href="#tn-rank">数据榜单</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>参与方式</h4>
+        <ul>
+          <li><a href="#tn-submit">创作投稿</a></li>
+          <li><a href="#tn-authors">创作者名录</a></li>
+          <li><a href="#tn-aux">合作洽谈</a></li>
+          <li><a href="#tn-aux">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>联系我们</h4>
+        <ul>
+          <li>合作邮箱：hello@taipeinana.example</li>
+          <li>创作者支持：creator@taipeinana.example</li>
+          <li>内容举报：report@taipeinana.example</li>
+          <li>工作时间：周一至周五 10:00–18:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tn-footer-bottom">
+      <span>© 2026 taipei_nana 今日吃瓜 官方网站 · 版权所有 · 持续运营中</span>
+      <span>内容备案示例号：影像字 2026-0118 · 原创正版 · 高清发布</span>
+    </div>
+  </div>
+</footer>
+
+<!-- 回到顶部 -->
+<button class="tn-top" id="tn-top-btn" type="button" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<!-- 弹窗 -->
+<div class="tn-modal-mask" id="tn-modal-mask" role="dialog" aria-modal="true" aria-labelledby="tn-modal-title">
+  <div class="tn-modal" id="tn-modal-box">
+    <button class="tn-modal-close" type="button" id="tn-modal-close" aria-label="关闭弹窗">✕</button>
+    <div id="tn-modal-content"></div>
+  </div>
+</div>
+
+<div class="tn-toast" id="tn-toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  "use strict";
+  var $ = function(sel,root){return (root||document).querySelector(sel);};
+  var $$ = function(sel,root){return Array.prototype.slice.call((root||document).querySelectorAll(sel));};
+
+  /* Toast */
+  var toastEl = $('#tn-toast');
+  var toastTimer = null;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('is-on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('is-on'); }, 2200);
+  }
+
+  /* 移动端导航折叠 */
+  var burger = $('#tn-burger');
+  var nav = $('#tn-nav');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('is-open');
+    burger.classList.toggle('is-open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? '收起导航' : '展开导航');
+  });
+  $$('#tn-nav a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('is-open');
+      burger.classList.remove('is-open');
+      burger.setAttribute('aria-expanded','false');
+    });
+  });
+
+  /* 搜索前端反馈 */
+  var searchForm = $('#tn-search-form');
+  var searchInput = $('#tn-search-input');
+  var searchHint = $('#tn-search-hint');
+  var searchIndex = [
+    '凌晨四点的汤锅 老面摊 美食',
+    '夜行地图 南京东路 城市探索',
+    '一块糕的手艺接力 手作 老铺',
+    '巷口访谈录 第 7 期 修鞋铺',
+    '大稻埕黄昏食单 专题企划',
+    '周末野餐实操指南 露营 咖啡',
+    '创作幕后 剪辑时间线 教程',
+    '插画师 街区人物 访谈',
+    '骑楼下的菜市场 声景 在地文化',
+    '今冬吃瓜地图 共创 投票'
+  ];
+  searchForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var q = searchInput.value.trim();
+    if(!q){
+      searchHint.classList.add('is-on');
+      searchHint.innerHTML = '试试输入「<em>汤锅</em>」「<em>夜行</em>」或「<em>手作</em>」来查找内容。';
+      return;
+    }
+    var hits = searchIndex.filter(function(item){
+      return item.toLowerCase().indexOf(q.toLowerCase()) !== -1;
+    });
+    searchHint.classList.add('is-on');
+    if(hits.length){
+      searchHint.innerHTML = '找到 <em>' + hits.length + '</em> 条与「' + q.replace(/[<>&]/g,'') + '」相关的内容：' + hits.slice(0,3).join('、') + '。';
+      toast('已为你筛选相关内容');
+    }else{
+      searchHint.innerHTML = '暂时没有与「' + q.replace(/[<>&]/g,'') + '」完全匹配的结果，换个关键词，或到<a href="#tn-videos" style="color:#e08a17;font-weight:700;">热门视频</a>里逛逛。';
+    }
+  });
+
+  /* 点赞 & 收藏 */
+  $$('[data-tn-like]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var on = btn.classList.toggle('is-active');
+      btn.setAttribute('aria-pressed', on ? 'true':'false');
+      var numEl = $('[data-tn-like-count]', btn);
+      if(numEl){
+        var n = parseInt(numEl.textContent.replace(/[^\d]/g,''),10) || 0;
+        numEl.textContent = on ? n + 1 : Math.max(0, n - 1);
+      }
+      toast(on ? '已点赞，感谢支持' : '已取消点赞');
+    });
+  });
+  $$('[data-tn-fav]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var on = btn.classList.toggle('is-active');
+      btn.setAttribute('aria-pressed', on ? 'true':'false');
+      if(btn.classList.contains('tn-fav') || btn.classList.contains('tn-op-fav')){
+        btn.textContent = on ? '已收藏' : (btn.classList.contains('tn-fav') ? '收藏' : '收藏');
+      }
+      toast(on ? '已加入收藏，稍后可继续观看' : '已取消收藏');
+    });
+  });
+
+  /* 数字滚动 */
+  var counters = $$('[data-tn-count]');
+  var counted = false;
+  function runCounters(){
+    if(counted) return;
+    counted = true;
+    counters.forEach(function(el){
+      var target = parseInt(el.getAttribute('data-tn-count'),10);
+      var start = 0, dur = 1100, t0 = null;
+      function step(ts){
+        if(!t0) t0 = ts;
+        var p = Math.min((ts - t0)/dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(start + (target - start) * eased);
+        if(p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ runCounters(); io.disconnect(); } });
+    },{threshold:.3});
+    var heroStats = $('.tn-stats');
+    if(heroStats) io.observe(heroStats);
+  }else{
+    runCounters();
+  }
+
+  /* 弹窗系统 */
+  var mask = $('#tn-modal-mask');
+  var box = $('#tn-modal-box');
+  var content = $('#tn-modal-content');
+  var lastFocus = null;
+
+  function openModal(html){
+    content.innerHTML = html;
+    mask.classList.add('is-open');
+    lastFocus = document.activeElement;
+    var focusable = box.querySelector('button, input, textarea, a');
+    if(focusable) focusable.focus();
+  }
+  function closeModal(){
+    mask.classList.remove('is-open');
+    content.innerHTML = '';
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  $('#tn-modal-close').addEventListener('click', closeModal);
+  mask.addEventListener('click', function(e){ if(e.target === mask) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && mask.classList.contains('is-open')) closeModal(); });
+
+  /* 评论弹窗 */
+  var commentStore = {};
+  $$('[data-tn-comment]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var title = btn.getAttribute('data-tn-comment');
+      var list = commentStore[title] || [
+        '看到老板把汤再舀一勺的时候，突然想家了。',
+        '这种长镜头很难得，愿意等的人不多了。',
+        '已经按片尾地址去了一趟，确实好吃，推荐。'
+      ];
+      var html = '<h3 id="tn-modal-title">观众评论</h3><p style="font-size:13px;">《' + title + '》</p>';
+      html += '<div style="margin-top:14px;display:flex;flex-direction:column;gap:10px;">';
+      list.forEach(function(c){
+        html += '<div style="background:#fff;border:1px solid #e2d6c0;border-radius:12px;padding:12px 14px;font-size:13.5px;color:#38424f;">' + c + '</div>';
+      });
+      html += '</div><label for="tn-new-comment">写下你的评论</label>';
+      html += '<textarea id="tn-new-comment" placeholder="说说你看到的细节…"></textarea>';
+      html += '<div class="tn-modal-ops"><button class="tn-btn tn-btn-primary" type="button" id="tn-comment-send">发表评论</button></div>';
+      openModal(html);
+      var send = $('#tn-comment-send');
+      var ta = $('#tn-new-comment');
+      send.addEventListener('click', function(){
+        var v = ta.value.trim();
+        if(!v){ toast('评论不能为空'); return; }
+        list.unshift(v);
+        commentStore[title] = list;
+        toast('评论已发布，感谢参与');
+        closeModal();
+      });
+    });
+  });
+
+  /* 作者弹窗 */
+  var authorInfo = {
+    '娜娜 Nana':'频道主理人，八年美食记者转视频导演。拍过 186 支作品，习惯先吃完再开机，坚持每条片子给出可核对店址。',
+    '阿彻 · 夜行摄影师':'一镜到底与环境声采集的实践者，作品被多份城市导览引用，路线地图全部公开。',
+    '小满 · 手作观察员':'产品设计师出身，专注手作与老铺改造，坚持保留返工片段，现负责平台手作专题。',
+    '阿岛 · 访谈主编':'提问很慢、剪辑也慢的访谈者，擅长把宏大问题拆成日常细节，每月一期巷口访谈。',
+    '阿禾 · 露营与咖啡':'周末在郊外，反对摆拍式露营，视频里如实标出天气与失败餐食，主张可执行的户外攻略。',
+    '阿陆 · 后期工作室':'团队后期负责人，公开剪辑时间线与失败取舍，开设面向新人的剪辑教程系列。'
+  };
+  $$('[data-tn-author]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var name = btn.getAttribute('data-tn-author');
+      var html = '<h3 id="tn-modal-title">' + name + '</h3>';
+      html += '<p style="font-size:14px;">' + (authorInfo[name] || '长期合作的在地创作者，持续为社区提供原创内容。') + '</p>';
+      html += '<div class="tn-modal-ops"><button class="tn-btn tn-btn-primary" type="button" id="tn-author-follow">关注创作者</button><button class="tn-btn tn-btn-line" type="button" data-tn-close>关闭</button></div>';
+      openModal(html);
+      $('#tn-author-follow').addEventListener('click', function(){ toast('已关注 ' + name); closeModal(); });
+      var closer = $('[data-tn-close]', content);
+      if(closer) closer.addEventListener('click', closeModal);
+    });
+  });
+
+  /* 分享 */
+  function shareModal(name){
+    var html = '<h3 id="tn-modal-title">分享</h3><p style="font-size:13.5px;">把「' + name + '」推荐给朋友，一起围观城里正在发生的事。</p>';
+    html += '<div class="tn-share-grid">';
+    html += '<button type="button" data-tn-share-target="微信">微信</button>';
+    html += '<button type="button" data-tn-share-target="微博">微博</button>';
+    html += '<button type="button" data-tn-share-target="QQ">QQ</button>';
+    html += '<button type="button" data-tn-share-target="复制链接">复制链接</button>';
+    html += '</div>';
+    openModal(html);
+    $$('[data-tn-share-target]', content).forEach(function(b){
+      b.addEventListener('click', function(){
+        var target = b.getAttribute('data-tn-share-target');
+        if(target === '复制链接'){
+          var link = 'taipei_nana 今日吃瓜 官方网站 · ' + name;
+          if(navigator.clipboard && navigator.clipboard.writeText){
+            navigator.clipboard.writeText(link).then(function(){ toast('内容摘要已复制，可粘贴分享'); }).catch(function(){ toast('复制失败，请手动选择文本'); });
+          }else{
+            toast('已生成分享摘要：' + name);
+          }
+        }else{
+          toast('已打开' + target + '分享面板（演示）');
+        }
+        closeModal();
+      });
+    });
+  }
+  $$('[data-tn-share]').forEach(function(btn){
+    btn.addEventListener('click', function(){ shareModal(btn.getAttribute('data-tn-share')); });
+  });
+
+  /* 投稿 / 举报 弹窗 */
+  $$('[data-tn-modal]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var kind = btn.getAttribute('data-tn-modal');
+      if(kind === 'submit'){
+        var html = '<h3 id="tn-modal-title">投稿入口</h3><p style="font-size:13.5px;">填写基本信息，我们会在两个工作日内回复审核意见。</p>';
+        html += '<label for="tn-sub-name">创作者昵称</label><input id="tn-sub-name" type="text" placeholder="例如：街角的小林">';
+        html += '<label for="tn-sub-title">作品标题</label><input id="tn-sub-title" type="text" placeholder="例如：雨天骑楼下的三碗甜汤">';
+        html += '<label for="tn-sub-link">素材说明</label><textarea id="tn-sub-link" placeholder="拍摄地点、时长、是否已获得受访者授权…"></textarea>';
+        html += '<div class="tn-modal-ops"><button class="tn-btn tn-btn-primary" type="button" id="tn-sub-send">提交审核</button><button class="tn-btn tn-btn-line" type="button" data-tn-close>稍后再说</button></div>';
+      }else{
+        var html2 = '<h3 id="tn-modal-title">意见与举报</h3><p style="font-size:13.5px;">如发现信息错误、版权问题或不友善内容，请告诉我们，平台会尽快核实处理。</p>';
+        html2 += '<label for="tn-rep-type">问题类型</label><input id="tn-rep-type" type="text" placeholder="例如：店址写错 / 版权 / 不当言论">';
+        html2 += '<label for="tn-rep-detail">详细描述</label><textarea id="tn-rep-detail" placeholder="请描述具体情况，便于我们核对"></textarea>';
+        html2 += '<div class="tn-modal-ops"><button class="tn-btn tn-btn-primary" type="button" id="tn-rep-send">提交反馈</button><button class="tn-btn tn-btn-line" type="button" data-tn-close>关闭</button></div>';
+      }
+      openModal(kind === 'submit' ? html : html2);
+      var closer = $('[data-tn-close]', content);
+      if(closer) closer.addEventListener('click', closeModal);
+      var sendBtn = $('#tn-sub-send') || $('#tn-rep-send');
+      if(sendBtn){
+        sendBtn.addEventListener('click', function(){
+          var nameEl = $('#tn-sub-name');
+          var txt = nameEl ? nameEl.value.trim() : '';
+          if(nameEl && !txt){ toast('请先填写创作者昵称'); return; }
+          toast(kind === 'submit' ? '投稿已提交，审核结果将发送到你的联系方式' : '反馈已收到，我们会尽快核实');
+          closeModal();
+        });
+      }
+    });
+  });
+
+  /* 回到顶部 */
+  var topBtn = $('#tn-top-btn');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 520){ topBtn.classList.add('is-on'); }else{ topBtn.classList.remove('is-on'); }
+  }, {passive:true});
+  topBtn.addEventListener('click', function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+})();
+</script>
+</body>
+                  </html>
